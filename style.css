@@ -1484,7 +1484,7 @@ letter-spacing: 0.8px;
   }
 
   .const-txt-aco p {
-    font-size: 24px;
+    font-size: 18px;
     letter-spacing: -0.3px;
   }
 
@@ -1527,10 +1527,11 @@ letter-spacing: 0.8px;
 
   .boxs-construir h6 {
     font-size: 18px;
+    font-weight: 700;
   }
 
   .boxs-construir p {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -1719,6 +1720,7 @@ letter-spacing: 0.8px;
 
   .transformacao-texto h2 {
     max-width: 600px;
+    font-size: 18px;
   }
 
   .comparador-casa {
@@ -1995,6 +1997,7 @@ letter-spacing: 0.8px;
 
   .estrutura__introducao h2 {
     max-width: 700px;
+    font-size: 18px;
   }
 
   .estrutura__diagrama {
