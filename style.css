@@ -774,13 +774,19 @@ button {
   }
 
   .interactive-area {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 88%; 
   }
 
   .construction-stage {
-    width: min(100%, 560px);
-    margin-inline: auto;
+  width: min(100%, 560px);
+  margin-inline: auto;
+  justify-self: center;
+  left: auto;
+  right: auto;
+  transform: none;
   }
 
   .touch-action {
@@ -1362,8 +1368,8 @@ text-transform: uppercase;
   }
 
   .boxs-etapas img {
-    max-width: 130px;
-    
+    max-width: 16vh;
+
   }
 
   .boxs-etapas p{
@@ -1493,13 +1499,13 @@ letter-spacing: 0.8px;
     display: none !important;
   }
   .const-txt-aco h5 {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 900;
   }
 
   .const-txt-aco p {
-    font-size: 18px;
-    letter-spacing: -0.3px;
-  }
+   font-size: 22px;
+    line-height: 1.25;  }
 
   .boxs-pqconstruir {
     gap: 28px 12px;
@@ -1750,11 +1756,11 @@ letter-spacing: 0.8px;
 
   .transformacao-texto span {
     margin-bottom: 12px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .transformacao-texto h2 {
-    font-size: 27px;
+    font-size: 26px;
     line-height: 1.25;
   }
 
