@@ -2,95 +2,297 @@
 
 }
 
-#header{
-        background-color: #07111f !important;
-}
-.navbar{
-    margin: 0 auto;
-    background-color: #07111f !important;
+/* =========================
+   HEADER
+========================= */
 
-}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 
-.container-fluid{
-  max-width: 1540px;
   width: 100%;
+  padding: 10px 24px;
+  
+  background: transparent;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+#header .navbar {
+  width: 100%;
+  max-width: 1760px;
+  min-height: 80px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  
   margin: 0 auto;
+  padding: 0;
 
+  background: rgba(2, 6, 20, 0.153);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+#header .container-fluid {
+  width: 100%;
+  max-width: none;
+
+  padding: 14px 30px;
+  margin: 0;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+#header .navbar-brand {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
 
-  padding: 0px 70px;
-
-}
- 
-.navbar a{
-    color: #f6f8fb !important;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
-    font-weight: 700;
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
-.navbar-brand{
-  display: block;
   width: 220px;
+  padding: 0;
+  margin: 0;
+}
+
+#header .navbar-brand img {
+  display: block;
+  width: 160px;
   height: auto;
-  transition: transform 0.2s;
 
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-.navbar img{
-    width: 18vh;
-    
-}
-.navbar img:hover{
-    scale: 1.05;
-    
+#header .navbar-brand:hover img {
+  transform: scale(1.04);
+  opacity: 0.9;
 }
 
-#navbarNav{
-    justify-content: center !important;
-        margin-left: 25vh ;
+/* =========================
+   LINKS
+========================= */
 
+#header .navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 0;
 }
 
-#navbarNav a{
+#header .nav-link {
+  position: relative;
 
+  padding: 14px 18px !important;
+
+  color: #f6f8fb !important;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  transition: color 0.3s ease;
 }
 
-#navbarNav a{
-    padding: 3vh;
-    text-align: left;
-    display: flex;
-    margin: 0 auto;
+#header .nav-link::after {
+  content: "";
+
+  position: absolute;
+  right: 18px;
+  bottom: 7px;
+  left: 18px;
+
+  height: 1px;
+
+  background-color: #075e30;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.3s ease;
 }
 
-#navbarNav a:hover{
-    transition: 0.2s;
-    color: #18A058 !important; 
+#header .nav-link:hover,
+#header .nav-link:focus {
+  color: #38b96f !important;
 }
 
-.nav-item{
-    
+#header .nav-link:hover::after,
+#header .nav-link:focus::after {
+  transform: scaleX(1);
 }
 
-.atendimento a{
-    color: #18A058 !important;
+/* =========================
+   BOTÃO
+========================= */
+
+#header #btn-navbar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 205px;
+  min-height: 50px;
+
+  padding: 13px 24px;
+
+  color: #38b96f !important;
+  background: rgba(24, 160, 88, 0.04);
+
+  border: 1px solid #18a058;
+  border-radius: 7px;
+
+  box-shadow: rgba(0, 0, 0, 0.092) 0px 8px 24px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
-.navbar-toggler{ 
-    color: #07111f00;
-    border: none;
+#header #btn-navbar:hover {
+  color: #ffffff !important;
+  background-color: #18a058;
+  transition: 0.3s !important;
+  box-shadow: 0 10px 25px rgba(24, 160, 88, 0.28);
+  transform: translateY(-2px);
+  -webkit-transition: 0.3s !important;
+  -moz-transition: 0.3s !important;
+  -ms-transition: 0.3s !important;
+  -o-transition: 0.3s !important;
 }
 
-.navbar-toggler-icon {
-    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 992px) {
+  #header .container-fluid {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    align-items: center;
+  }
+
+  #header .navbar-collapse {
+    display: grid !important;
+    grid-column: 2 / 4;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+  }
+
+  #header .navbar-nav {
+    justify-self: center;
+  }
+
+  #header #btn-navbar {
+    justify-self: end;
+  }
+}
+
+/* =========================
+   BOTÃO MOBILE
+========================= */
+
+#header .navbar-toggler {
+  padding: 8px;
+
+  color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#header .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+#header .navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg:
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 991px) {
+  #header {
+    padding: 12px;
+  }
+
+  #header .navbar {
+    min-height: 72px;
+    border-radius: 12px;
+  }
+
+  #header .container-fluid {
+    padding: 12px 16px;
+  }
+
+  #header .navbar-brand {
+    width: auto;
+  }
+
+  #header .navbar-brand img {
+    width: 145px;
+  }
+
+  #header .navbar-collapse {
+    margin-top: 14px;
+    padding: 15px 0 5px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  #header .navbar-nav {
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  #header .nav-link {
+    padding: 13px 4px !important;
+  }
+
+  #header .nav-link::after {
+    right: auto;
+    bottom: 5px;
+    left: 4px;
+
+    width: 35px;
+    transform-origin: left;
+  }
+
+  #header #btn-navbar {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
 
 /* HERO */
 .hero-banner {
-  min-height: 85vh;
+  min-height: 95vh;
   display: flex;
   align-items: center;
 
