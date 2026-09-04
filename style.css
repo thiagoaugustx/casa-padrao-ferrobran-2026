@@ -1981,6 +1981,7 @@ letter-spacing: 0.8px;
 .estrutura,
 .estrutura * {
   box-sizing: border-box;
+  
 }
 
 .estrutura {
@@ -2350,457 +2351,464 @@ letter-spacing: 0.8px;
   }
 }
 
-.fb-fabricacao-2026,
-.fb-fabricacao-2026 * {
-  box-sizing: border-box;
-}
+/* ==========================================================
+   SECTION
+========================================================== */
 
 .fb-fabricacao-2026 {
-  --verde-fabricacao: #8ebd4c;
-  --branco-fabricacao: #f5f5f5;
-  --cinza-fabricacao: #c7cac7;
-  --fundo-fabricacao: #0a0f0e;
-
-  position: relative;
   width: 100%;
-  padding: 20px 0;
 
-  color: var(--branco-fabricacao);
-  font-family: "Montserrat", sans-serif;
+  padding: 60px 40px;
 
-  background:
-    radial-gradient(
-      circle at 45% 50%,
-      rgba(80, 111, 62, 0.08),
-      transparent 35%
-    ),
-    linear-gradient(
-      110deg,
-      #0c110f 0%,
-      #090d0c 55%,
-      #0d1110 100%
-    );
+   background:
+        linear-gradient(
+            90deg,
+            rgba(7, 12, 15, 0.99) 0%,
+            rgba(8, 14, 18, 0.98) 48%,
+            rgba(10, 16, 20, 0.98) 100%
+        );
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.18);
 
   overflow: hidden;
 }
 
-.fb-fabricacao-2026::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
+.fb-fabricacao-2026 img{
+  border-radius: 15px 15px 0 0 ;
+  -webkit-border-radius: 15px 15px 0 0 ;
+  -moz-border-radius: 15px 15px 0 0 ;
+  -ms-border-radius: 15px 15px 0 0 ;
+  -o-border-radius: 15px 15px 0 0 ;
 }
 
-/* Container */
+/* ==========================================================
+   CONTAINER
+========================================================== */
 
 .fb-fabricacao-2026__container {
-  width: min(calc(100% - 50px), 1400px);
+  width: 100%;
+  max-width: 1300px;
+
   margin: 0 auto;
 }
 
-/* Layout principal */
+
+/* ==========================================================
+   GRID PRINCIPAL
+========================================================== */
 
 .fb-fabricacao-2026__layout {
   width: 100%;
-  height: clamp(350px, 26vw, 400px);
 
   display: grid;
-  grid-template-columns:
-    minmax(290px, 29%)
-    minmax(480px, 39%)
-    minmax(350px, 32%);
 
-  gap: 14px;
+  grid-template-columns:
+  320px
+    minmax(500px, 2.35fr)
+    minmax(320px, 0.95fr);
+
+  align-items: stretch;
+
+  gap: 0;
 }
 
-/* Texto */
+
+/* ==========================================================
+   TEXTO
+========================================================== */
 
 .fb-fabricacao-2026__texto {
-  min-width: 0;
-  padding: 25px 18px 25px 12px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+
+  }
+
 
 .fb-fabricacao-2026__subtitulo {
-  margin-bottom: 13px;
-
-  color: var(--verde-fabricacao);
-  font-size: clamp(11px, 0.85vw, 14px);
-  font-weight: 800;
-  letter-spacing: 1.7px;
+  margin-bottom: 18px;
   text-transform: uppercase;
+  color: #588728;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
 }
+
 
 .fb-fabricacao-2026__texto h2 {
-  max-width: 450px;
-  margin: 0 0 15px;
+  margin:
+    0
+    0
+    22px;
 
-  color: var(--branco-fabricacao);
-  font-size: clamp(28px, 2.25vw, 39px);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -1.4px;
+  max-width: 260px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  line-height: 1.04;
+
+  letter-spacing: -1.2px;
+
+  font-weight: 400;
 }
+
 
 .fb-fabricacao-2026__texto h2 strong {
   display: block;
-  color: var(--branco-fabricacao);
-  font-weight: 600;
-}
 
-.fb-fabricacao-2026__texto p {
-  max-width: 440px;
-  margin: 0;
+  color: #ffffff;
 
-  color: var(--cinza-fabricacao);
-  font-size: clamp(12px, 0.95vw, 16px);
-  font-weight: 400;
-  line-height: 1.45;
-}
-
-.fb-fabricacao-2026__texto p strong {
-  color: var(--branco-fabricacao);
   font-weight: 700;
 }
 
-/* Centro */
 
-.fb-fabricacao-2026__centro {
-  min-width: 0;
+.fb-fabricacao-2026__texto p {
+  margin: 0;
 
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) 102px;
-  gap: 12px;
+  max-width: 270px;
+
+  color:
+    rgba(255, 255, 255, 0.66);
+
+  font-size: 14px;
+
+  line-height: 1.55;
 }
 
-/* Imagem principal */
+
+.fb-fabricacao-2026__texto p strong {
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   CENTRO
+========================================================== */
+
+.fb-fabricacao-2026__centro {
+  height: 390px;
+  width: 95%;
+  display: grid;
+
+  grid-template-rows:
+    minmax(0, 1fr)
+    90px;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   IMAGEM CENTRAL
+========================================================== */
 
 .fb-fabricacao-2026__imagem-principal {
   width: 100%;
   height: 100%;
+
   margin: 0;
 
-  border-radius: 6px;
   overflow: hidden;
-  background-color: #141918;
+
+  background: #09100d;
 }
+
 
 .fb-fabricacao-2026__imagem-principal img {
   width: 100%;
   height: 100%;
 
   display: block;
+
   object-fit: cover;
+
   object-position: center;
 
-  transition: transform 0.6s ease;
+  transition:
+    transform 0.45s ease;
 }
+
 
 .fb-fabricacao-2026__imagem-principal:hover img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
-/* Indicadores */
+
+/* ==========================================================
+   INDICADORES
+========================================================== */
 
 .fb-fabricacao-2026__indicadores {
+  width: 100%;
+  height: 90px;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns:    repeat(6, minmax(0, 1fr));
+  border-radius: 0 0  15px 15px  ;
+  background: #0e0e0e60;
+  -webkit-border-radius: 0 0  15px 15px  ;
+  -moz-border-radius: 0 0  15px 15px  ;
+  -ms-border-radius: 0 0  15px 15px  ;
+  -o-border-radius: 0 0  15px 15px  ;
 }
+
+
+/* indicador */
 
 .fb-fabricacao-2026__indicador {
   min-width: 0;
-  padding: 4px 8px;
 
   display: flex;
+
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
+
+  gap: 4px;
 
   text-align: center;
+
+  padding: 8px 5px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.15);
 }
 
-.fb-fabricacao-2026__indicador:not(:last-child) {
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
+
+.fb-fabricacao-2026__indicador:last-child {
+  border-right: none;
 }
+
+
+/* ícone */
 
 .fb-fabricacao-2026__indicador > i {
-  margin-bottom: 7px;
+  margin-bottom: 2px;
 
-  color: var(--verde-fabricacao);
-  font-size: clamp(20px, 1.5vw, 27px);
+  color: #8fd126;
+
+  font-size: 20px;
+
   line-height: 1;
 }
 
-.fb-fabricacao-2026__indicador > div {
+
+/* textos */
+
+.fb-fabricacao-2026__indicador div {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+
+  align-items: center;
+
+  gap: 2px;
 }
 
+
 .fb-fabricacao-2026__indicador strong {
-  color: var(--branco-fabricacao);
-  font-size: clamp(10px, 0.72vw, 13px);
-  font-weight: 700;
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+
+.fb-fabricacao-2026__indicador span {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 8px;
+
   line-height: 1.2;
 }
 
-.fb-fabricacao-2026__indicador span {
-  color: var(--cinza-fabricacao);
-  font-size: clamp(8px, 0.62vw, 11px);
-  line-height: 1.3;
-}
 
-/* Galeria */
+/* ==========================================================
+   COLUNA DIREITA
+========================================================== */
 
 .fb-fabricacao-2026__galeria {
-  min-width: 0;
+  height: 390px;
 
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  overflow: hidden;
 }
 
-.fb-fabricacao-2026__galeria-linha {
-  min-width: 0;
 
-  display: grid;
-  gap: 10px;
-}
+/* ==========================================================
+   IMAGEM DIREITA
+========================================================== */
 
-.fb-fabricacao-20266__galeria-superior {
-  grid-template-columns: 1fr 1fr;
-}
-
-.fb-fabricacao-2026__galeria-inferior {
-  grid-template-columns: 0.65fr 1.35fr;
-}
-
-.fb-fabricacao-2026__galeria figure {
+.fb-fabricacao-2026__imagem-lateral {
   width: 100%;
   height: 100%;
-  min-width: 0;
+
   margin: 0;
 
-  border-radius: 5px;
   overflow: hidden;
-  background-color: #131816;
+
+  background: #09100d;
 }
 
-.fb-fabricacao-2026__galeria img {
+
+.fb-fabricacao-2026__imagem-lateral img {
   width: 100%;
   height: 100%;
 
   display: block;
+
   object-fit: cover;
+
   object-position: center;
 
-  transition: transform 0.6s ease;
+  transition:
+    transform 0.45s ease;
 }
 
-.fb-fabricacao-2026__galeria figure:hover img {
-  transform: scale(1.05);
+
+.fb-fabricacao-2026__imagem-lateral:hover img {
+  transform: scale(1.025);
 }
 
-/* Notebook */
 
-@media (max-width: 1200px) {
-  .fb-fabricacao-2026 {
-    padding: 35px 0;
-  }
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1150px) {
 
   .fb-fabricacao-2026__layout {
+    grid-template-columns:
+      260px
+      1fr;
+  }
+
+
+  .fb-fabricacao-2026__galeria {
+    grid-column:
+      1 / -1;
+
+    height: 380px;
+  }
+
+
+  .fb-fabricacao-2026__centro {
     height: auto;
 
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 20px;
+    grid-template-rows:
+      300px
+      auto;
   }
 
-  .fb-fabricacao-2026__texto {
-    min-height: 360px;
-    padding: 30px 20px;
+
+  .fb-fabricacao-2026__indicadores {
+    height: auto;
+
+    grid-template-columns:
+      repeat(3, 1fr);
   }
 
-  .fb-fabricacao-2026__texto h2 {
-    font-size: clamp(34px, 4vw, 48px);
+
+  .fb-fabricacao-2026__indicador {
+    min-height: 80px;
   }
 
-  .fb-fabricacao-2026__texto p {
-    font-size: 15px;
-  }
-
-  .fb-fabricacao-2026__centro {
-    min-height: 360px;
-  }
-
-  .fb-fabricacao-2026__galeria {
-    grid-column: 1 / -1;
-    height: 420px;
-  }
 }
 
-/* Tablet */
 
-@media (max-width: 768px) {
-  .fb-fabricacao-2026__container {
-    width: calc(100% - 36px);
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .fb-fabricacao-2026 {
+    padding:
+      55px
+      20px;
   }
+
 
   .fb-fabricacao-2026__layout {
-    grid-template-columns: 1fr;
+    display: flex;
+
+    flex-direction: column;
   }
+
+
+  /* texto */
 
   .fb-fabricacao-2026__texto {
-    min-height: auto;
-    padding: 35px 5px;
+    padding:
+      0
+      0
+      30px;
   }
 
-  .fb-fabricacao-2026__subtitulo {
-    font-size: 12px;
-  }
 
   .fb-fabricacao-2026__texto h2 {
-    max-width: 650px;
-    font-size: clamp(37px, 7vw, 52px);
+    max-width: 100%;
+
+    font-size: 38px;
   }
+
 
   .fb-fabricacao-2026__texto p {
-    max-width: 600px;
-    font-size: 16px;
-  }
+    max-width: 100%;
 
-  .fb-fabricacao-2026__centro {
-    min-height: auto;
-    grid-template-rows: 310px auto;
-  }
-
-  .fb-fabricacao-2026__indicadores {
-    padding: 24px 0;
-
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 28px;
-  }
-
-  .fb-fabricacao-2026__indicador {
-    min-height: 95px;
-    padding: 0 16px;
-    border-right: none !important;
-  }
-
-  .fb-fabricacao-2026__indicador:not(:nth-child(3n)) {
-    border-right: 1px solid rgba(255, 255, 255, 0.25) !important;
-  }
-
-  .fb-fabricacao-2026__indicador > i {
-    font-size: 30px;
-  }
-
-  .fb-fabricacao-2026__indicador strong {
-    font-size: 14px;
-  }
-
-  .fb-fabricacao-2026__indicador span {
-    font-size: 12px;
-  }
-
-  .fb-fabricacao-2026__galeria {
-    grid-column: auto;
-    height: 400px;
-  }
-}
-
-/* Celular */
-
-@media (max-width: 520px) {
-  .fb-fabricacao-2026 {
-    padding: 42px 0;
-  }
-
-  .fb-fabricacao-2026__container {
-    width: calc(100% - 28px);
-  }
-
-  .fb-fabricacao-2026__texto {
-    padding: 20px 2px 30px;
-  }
-
-  .fb-fabricacao-2026__subtitulo {
-    margin-bottom: 12px;
-
-    font-size: 10px;
-    letter-spacing: 1.4px;
-  }
-
-  .fb-fabricacao-2026__texto h2 {
-    margin-bottom: 17px;
-
-    font-size: clamp(32px, 10vw, 42px);
-    line-height: 1.08;
-    letter-spacing: -1.3px;
-  }
-
-  .fb-fabricacao-2026__texto p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .fb-fabricacao-2026__centro {
-    grid-template-rows: 240px auto;
-  }
-
-  .fb-fabricacao-2026__imagem-principal {
-    border-radius: 8px;
-  }
-
-  .fb-fabricacao-2026__indicadores {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 30px;
-  }
-
-  .fb-fabricacao-2026__indicador {
-    min-height: 90px;
-    padding: 0 12px;
-    border-right: none !important;
-  }
-
-  .fb-fabricacao-2026__indicador:nth-child(odd) {
-    border-right: 1px solid rgba(255, 255, 255, 0.25) !important;
-  }
-
-  .fb-fabricacao-2026__indicador > i {
-    font-size: 28px;
-  }
-
-  .fb-fabricacao-2026__indicador strong {
     font-size: 13px;
   }
 
-  .fb-fabricacao-2026__indicador span {
-    font-size: 11px;
+
+  /* centro */
+
+  .fb-fabricacao-2026__centro {
+    display: flex;
+
+    flex-direction: column;
+
+    height: auto;
   }
+
+
+  .fb-fabricacao-2026__imagem-principal {
+    height: 260px;
+  }
+
+
+  /* indicadores */
+
+  .fb-fabricacao-2026__indicadores {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .fb-fabricacao-2026__indicador {
+    min-height: 82px;
+  }
+
+
+  /* direita */
 
   .fb-fabricacao-2026__galeria {
-    height: 340px;
-    gap: 8px;
+    height: 320px;
+
+    margin-top: 14px;
   }
 
-  .fb-fabricacao-2026__galeria-linha {
-    gap: 8px;
-  }
-
-  .fb-fabricacao-2026__galeria-inferior {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .fb-fabricacao-2026__galeria figure {
-    border-radius: 7px;
-  }
 }
 /* =====================================================
    SECTION - PROPOSTA / CONTATO
@@ -2847,17 +2855,6 @@ letter-spacing: 0.8px;
 
     opacity: 0.05;
 
-    background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.18) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.18) 1px,
-            transparent 1px
-        );
-
     background-size: 38px 38px;
 
     transform:
@@ -2881,13 +2878,6 @@ letter-spacing: 0.8px;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(20, 156, 59, 0.08),
-            transparent 70%
-        );
-
     pointer-events: none;
 }
 
@@ -2898,7 +2888,7 @@ letter-spacing: 0.8px;
 
 .proposal-container {
     position: relative;
-
+  
     z-index: 2;
 
     width: 100%;

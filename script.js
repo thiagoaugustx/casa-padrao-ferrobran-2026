@@ -291,9 +291,13 @@ document.addEventListener("DOMContentLoaded", function () {
        URL DO APPS SCRIPT
     ===================================================== */
 
-    const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbyFhb5u__I-fjzR_eMvM3LZtfGYp5thBxMiCGZE8F0yhBxXfFbKrYTM3BcpMEumtMMv/exec";
-
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwik2rsyHaJxP1eONXrDoVZ_VP7ktPUVRxvSc6aUdUrfjk8_iEGJjuiSt71s0bylXGx/exec";
+      
+    console.log(
+    "APPS SCRIPT UTILIZADO:",
+    SCRIPT_URL
+    );
 
     /* =====================================================
        MÁSCARA WHATSAPP
