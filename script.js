@@ -248,184 +248,283 @@ if (document.readyState === "loading") {
   initializeConstructionInteraction();
 }
 
-const proposalForm =
-    document.getElementById("proposalForm");
+document.addEventListener("DOMContentLoaded", function () {
 
-const proposalSubmit =
-    document.getElementById("proposalSubmit");
+    /* =====================================================
+       ELEMENTOS
+    ===================================================== */
 
-const proposalMessage =
-    document.getElementById("proposalMessage");
+    const proposalForm =
+        document.getElementById("proposalForm");
 
-const whatsappInput =
-    document.getElementById("whatsapp");
+    const proposalSubmit =
+        document.getElementById("proposalSubmit");
 
+    const proposalMessage =
+        document.getElementById("proposalMessage");
 
-/* =====================================================
-   URL DO GOOGLE APPS SCRIPT
-===================================================== */
-
-const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyFhb5u__I-fjzR_eMvM3LZtfGYp5thBxMiCGZE8F0yhBxXfFbKrYTM3BcpMEumtMMv/exec";
+    const whatsappInput =
+        document.getElementById("whatsapp");
 
 
-/* =====================================================
-   MÁSCARA WHATSAPP
-===================================================== */
+    /* =====================================================
+       VERIFICA SE O FORMULÁRIO EXISTE
+    ===================================================== */
 
-whatsappInput.addEventListener("input", function (event) {
+    if (!proposalForm) {
 
-    let value =
-        event.target.value.replace(/\D/g, "");
-
-    value =
-        value.substring(0, 11);
-
-
-    if (value.length > 10) {
-
-        value =
-            value.replace(
-                /^(\d{2})(\d{5})(\d{4})$/,
-                "($1) $2-$3"
-            );
-
-    } else if (value.length > 6) {
-
-        value =
-            value.replace(
-                /^(\d{2})(\d{4})(\d+)/,
-                "($1) $2-$3"
-            );
-
-    } else if (value.length > 2) {
-
-        value =
-            value.replace(
-                /^(\d{2})(\d+)/,
-                "($1) $2"
-            );
-
-    } else if (value.length > 0) {
-
-        value =
-            value.replace(
-                /^(\d*)/,
-                "($1"
-            );
-
-    }
-
-    event.target.value = value;
-
-});
-
-
-/* =====================================================
-   ENVIO DO FORMULÁRIO
-===================================================== */
-
-proposalForm.addEventListener(
-    "submit",
-    async function (event) {
-
-        event.preventDefault();
-
-
-        /* limpa mensagens antigas */
-
-        proposalMessage.className =
-            "proposal-message";
-
-        proposalMessage.textContent = "";
-
-
-        /* ativa loader */
-
-        proposalSubmit.classList.add(
-            "loading"
+        console.error(
+            "ERRO: formulário #proposalForm não encontrado."
         );
 
-        proposalSubmit.disabled = true;
-
-
-        try {
-
-            /*
-             * FormData captura automaticamente
-             * todos os inputs que possuem "name"
-             */
-
-            const formData =
-                new FormData(proposalForm);
-
-
-            /*
-             * Envia os dados para
-             * Google Apps Script
-             */
-
-            await fetch(
-                SCRIPT_URL,
-                {
-                    method: "POST",
-
-                    body: formData,
-
-                    /*
-                     * Necessário porque Apps Script
-                     * está em outro domínio.
-                     */
-                    mode: "no-cors"
-                }
-            );
-
-
-            /* sucesso */
-
-            proposalMessage.className =
-                "proposal-message success";
-
-            proposalMessage.innerHTML =
-                `
-                    <strong>Solicitação enviada!</strong><br>
-                    Recebemos suas informações.
-                    Nossa equipe entrará em contato em breve.
-                `;
-
-
-            /* limpa formulário */
-
-            proposalForm.reset();
-
-
-        } catch (error) {
-
-            console.error(
-                "Erro ao enviar formulário:",
-                error
-            );
-
-
-            proposalMessage.className =
-                "proposal-message error";
-
-            proposalMessage.textContent =
-                "Não foi possível enviar sua solicitação. Tente novamente.";
-
-        } finally {
-
-            proposalSubmit.classList.remove(
-                "loading"
-            );
-
-            proposalSubmit.disabled = false;
-
-        }
+        return;
 
     }
-);
 
 
+    console.log(
+        "Formulário Ferrobran carregado com sucesso."
+    );
 
 
+    /* =====================================================
+       URL DO APPS SCRIPT
+    ===================================================== */
+
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyFhb5u__I-fjzR_eMvM3LZtfGYp5thBxMiCGZE8F0yhBxXfFbKrYTM3BcpMEumtMMv/exec";
+
+
+    /* =====================================================
+       MÁSCARA WHATSAPP
+    ===================================================== */
+
+    if (whatsappInput) {
+
+        whatsappInput.addEventListener(
+            "input",
+            function (event) {
+
+                let value =
+                    event.target.value
+                        .replace(/\D/g, "")
+                        .substring(0, 11);
+
+
+                if (value.length > 10) {
+
+                    value = value.replace(
+                        /^(\d{2})(\d{5})(\d{4})$/,
+                        "($1) $2-$3"
+                    );
+
+                } else if (value.length > 6) {
+
+                    value = value.replace(
+                        /^(\d{2})(\d{4})(\d+)/,
+                        "($1) $2-$3"
+                    );
+
+                } else if (value.length > 2) {
+
+                    value = value.replace(
+                        /^(\d{2})(\d+)/,
+                        "($1) $2"
+                    );
+
+                } else if (value.length > 0) {
+
+                    value = value.replace(
+                        /^(\d*)/,
+                        "($1"
+                    );
+
+                }
+
+
+                event.target.value = value;
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ENVIO DO FORMULÁRIO
+    ===================================================== */
+
+    proposalForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            /*
+             * Impede a página de atualizar
+             */
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            console.log(
+                "Botão enviar acionado."
+            );
+
+
+            /* =================================================
+               LIMPA MENSAGEM ANTERIOR
+            ================================================= */
+
+            if (proposalMessage) {
+
+                proposalMessage.className =
+                    "proposal-message";
+
+                proposalMessage.textContent =
+                    "";
+
+            }
+
+
+            /* =================================================
+               BOTÃO CARREGANDO
+            ================================================= */
+
+            if (proposalSubmit) {
+
+                proposalSubmit.classList.add(
+                    "loading"
+                );
+
+                proposalSubmit.disabled =
+                    true;
+
+            }
+
+
+            try {
+
+                /* =============================================
+                   CAPTURA OS DADOS
+                ============================================= */
+
+                const formData =
+                    new FormData(proposalForm);
+
+
+                console.log(
+                    "Dados que serão enviados:"
+                );
+
+
+                for (
+                    const [campo, valor]
+                    of formData.entries()
+                ) {
+
+                    console.log(
+                        campo,
+                        ":",
+                        valor
+                    );
+
+                }
+
+
+                /* =============================================
+                   ENVIA PARA O GOOGLE APPS SCRIPT
+                ============================================= */
+
+                console.log(
+                    "Enviando para Apps Script..."
+                );
+
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+
+                        body: formData,
+
+                        mode: "no-cors"
+                    }
+                );
+
+
+                console.log(
+                    "Requisição enviada."
+                );
+
+
+                /* =============================================
+                   MENSAGEM DE SUCESSO
+                ============================================= */
+
+                if (proposalMessage) {
+
+                    proposalMessage.className =
+                        "proposal-message success";
+
+
+                    proposalMessage.innerHTML = `
+                        <strong>Solicitação enviada!</strong><br>
+                        Recebemos suas informações.
+                        Nossa equipe entrará em contato em breve.
+                    `;
+
+                }
+
+
+                /* =============================================
+                   LIMPA FORMULÁRIO
+                ============================================= */
+
+                proposalForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Erro ao enviar:",
+                    error
+                );
+
+
+                if (proposalMessage) {
+
+                    proposalMessage.className =
+                        "proposal-message error";
+
+
+                    proposalMessage.innerHTML = `
+                        <strong>Não foi possível enviar.</strong><br>
+                        Tente novamente em alguns instantes.
+                    `;
+
+                }
+
+            } finally {
+
+                /* =============================================
+                   RESTAURA BOTÃO
+                ============================================= */
+
+                if (proposalSubmit) {
+
+                    proposalSubmit.classList.remove(
+                        "loading"
+                    );
+
+
+                    proposalSubmit.disabled =
+                        false;
+
+                }
+
+            }
+
+        }
+    );
+
+});
