@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbwik2rsyHaJxP1eONXrDoVZ_VP7ktPUVRxvSc6aUdUrfjk8_iEGJjuiSt71s0bylXGx/exec";
-      
+
     console.log(
     "APPS SCRIPT UTILIZADO:",
     SCRIPT_URL
@@ -532,3 +532,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+const footerYear =
+    document.getElementById("fb-footer-year");
+
+if (footerYear) {
+    footerYear.textContent =
+        new Date().getFullYear();
+}
