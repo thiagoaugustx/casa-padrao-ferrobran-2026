@@ -248,3 +248,184 @@ if (document.readyState === "loading") {
   initializeConstructionInteraction();
 }
 
+const proposalForm =
+    document.getElementById("proposalForm");
+
+const proposalSubmit =
+    document.getElementById("proposalSubmit");
+
+const proposalMessage =
+    document.getElementById("proposalMessage");
+
+const whatsappInput =
+    document.getElementById("whatsapp");
+
+
+/* =====================================================
+   URL DO GOOGLE APPS SCRIPT
+===================================================== */
+
+const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbyFhb5u__I-fjzR_eMvM3LZtfGYp5thBxMiCGZE8F0yhBxXfFbKrYTM3BcpMEumtMMv/exec";
+
+
+/* =====================================================
+   MÁSCARA WHATSAPP
+===================================================== */
+
+whatsappInput.addEventListener("input", function (event) {
+
+    let value =
+        event.target.value.replace(/\D/g, "");
+
+    value =
+        value.substring(0, 11);
+
+
+    if (value.length > 10) {
+
+        value =
+            value.replace(
+                /^(\d{2})(\d{5})(\d{4})$/,
+                "($1) $2-$3"
+            );
+
+    } else if (value.length > 6) {
+
+        value =
+            value.replace(
+                /^(\d{2})(\d{4})(\d+)/,
+                "($1) $2-$3"
+            );
+
+    } else if (value.length > 2) {
+
+        value =
+            value.replace(
+                /^(\d{2})(\d+)/,
+                "($1) $2"
+            );
+
+    } else if (value.length > 0) {
+
+        value =
+            value.replace(
+                /^(\d*)/,
+                "($1"
+            );
+
+    }
+
+    event.target.value = value;
+
+});
+
+
+/* =====================================================
+   ENVIO DO FORMULÁRIO
+===================================================== */
+
+proposalForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        /* limpa mensagens antigas */
+
+        proposalMessage.className =
+            "proposal-message";
+
+        proposalMessage.textContent = "";
+
+
+        /* ativa loader */
+
+        proposalSubmit.classList.add(
+            "loading"
+        );
+
+        proposalSubmit.disabled = true;
+
+
+        try {
+
+            /*
+             * FormData captura automaticamente
+             * todos os inputs que possuem "name"
+             */
+
+            const formData =
+                new FormData(proposalForm);
+
+
+            /*
+             * Envia os dados para
+             * Google Apps Script
+             */
+
+            await fetch(
+                SCRIPT_URL,
+                {
+                    method: "POST",
+
+                    body: formData,
+
+                    /*
+                     * Necessário porque Apps Script
+                     * está em outro domínio.
+                     */
+                    mode: "no-cors"
+                }
+            );
+
+
+            /* sucesso */
+
+            proposalMessage.className =
+                "proposal-message success";
+
+            proposalMessage.innerHTML =
+                `
+                    <strong>Solicitação enviada!</strong><br>
+                    Recebemos suas informações.
+                    Nossa equipe entrará em contato em breve.
+                `;
+
+
+            /* limpa formulário */
+
+            proposalForm.reset();
+
+
+        } catch (error) {
+
+            console.error(
+                "Erro ao enviar formulário:",
+                error
+            );
+
+
+            proposalMessage.className =
+                "proposal-message error";
+
+            proposalMessage.textContent =
+                "Não foi possível enviar sua solicitação. Tente novamente.";
+
+        } finally {
+
+            proposalSubmit.classList.remove(
+                "loading"
+            );
+
+            proposalSubmit.disabled = false;
+
+        }
+
+    }
+);
+
+
+
+

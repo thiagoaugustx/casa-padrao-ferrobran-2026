@@ -1437,9 +1437,6 @@ padding: 5px;
 }
 
 
-.planta::before{
-}
-
 .boxs-etapas{
   width: 25%;
   padding: 1.5vh;
@@ -1642,12 +1639,7 @@ letter-spacing: 0.8px;
   font-size: 12px;
 }
 
-.boxs-construir h6{
-  width: ;
-}
-
-/* Tablet */
-@media (max-width: 992px) {
+  @media (max-width: 992px) {
   .pqconstruir {
     padding: 50px 24px;
   }
@@ -2809,4 +2801,1029 @@ letter-spacing: 0.8px;
   .fb-fabricacao-2026__galeria figure {
     border-radius: 7px;
   }
+}
+/* =====================================================
+   SECTION - PROPOSTA / CONTATO
+===================================================== */
+
+.proposal-section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: auto;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 12, 15, 0.99) 0%,
+            rgba(8, 14, 18, 0.98) 48%,
+            rgba(10, 16, 20, 0.98) 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   DECORAÇÃO DE FUNDO
+===================================================== */
+
+.proposal-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 450px;
+
+    left: 180px;
+    bottom: -130px;
+
+    opacity: 0.05;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+
+    transform:
+        perspective(600px)
+        rotateX(65deg);
+
+    pointer-events: none;
+}
+
+
+.proposal-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -180px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(20, 156, 59, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.proposal-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto !important;
+  
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(480px, 560px);
+
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =====================================================
+   LADO ESQUERDO
+===================================================== */
+
+.proposal-content {
+    width: 100%;
+    max-width: 580px;
+}
+
+
+/* EYEBROW */
+
+.proposal-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #1ca943;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* TÍTULO */
+
+.proposal-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    font-weight: 600;
+}
+
+
+.proposal-title span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #159f3c;
+}
+
+
+/* DESCRIÇÃO */
+
+.proposal-description {
+    max-width: 520px;
+
+    margin-top: 22px;
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* LINHA VERDE */
+
+.proposal-line {
+    width: 45px;
+    height: 2px;
+
+    margin-top: 22px;
+    margin-bottom: 18px;
+
+    background: #159f3c;
+}
+
+
+/* =====================================================
+   BENEFÍCIOS
+===================================================== */
+
+.proposal-benefits {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+.proposal-benefit {
+    display: grid;
+
+    grid-template-columns: 58px 1fr;
+
+    gap: 17px;
+
+    align-items: center;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.proposal-benefit:last-child {
+    border-bottom: none;
+}
+
+
+/* ÍCONE */
+
+.proposal-benefit-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #18a641;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.proposal-benefit:hover .proposal-benefit-icon {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(24, 166, 65, 0.45);
+
+    background:
+        rgba(24, 166, 65, 0.05);
+}
+
+
+.proposal-benefit-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+
+/* TEXTO BENEFÍCIO */
+
+.proposal-benefit h3 {
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.proposal-benefit p {
+    max-width: 390px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.57);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   WRAPPER FORM
+===================================================== */
+
+.proposal-form-wrapper {
+    width: 100%;
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+.proposal-form {
+    width: 100%;
+
+    padding: 30px 32px;
+
+    background: #f8f7f2;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.28);
+}
+
+
+/* CABEÇALHO FORM */
+
+.proposal-form-header {
+    margin-bottom: 22px;
+}
+
+
+.proposal-form-header h3 {
+    margin: 0 0 4px;
+
+    color: #191c20;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.8px;
+
+    line-height: 1.2;
+}
+
+
+.proposal-form-header p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   GRID DO FORM
+===================================================== */
+
+.proposal-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 14px;
+    row-gap: 15px;
+}
+
+
+/* =====================================================
+   CAMPOS
+===================================================== */
+
+.proposal-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    width: 100%;
+}
+
+
+.proposal-field label {
+    color: #25282b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.proposal-field label span {
+    margin-left: 3px;
+
+    color: #179a3b;
+}
+
+
+/* INPUTS */
+
+.proposal-field input,
+.proposal-field select,
+.proposal-field textarea {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid #d9d9d5;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #222222;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* ALTURA */
+
+.proposal-field input,
+.proposal-field select {
+    height: 45px;
+}
+
+
+/* PLACEHOLDER */
+
+.proposal-field input::placeholder,
+.proposal-field textarea::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* SELECT */
+
+.proposal-field select {
+    cursor: pointer;
+}
+
+
+/* FOCUS */
+
+.proposal-field input:focus,
+.proposal-field select:focus,
+.proposal-field textarea:focus {
+    border-color: #169d3d;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 157, 61, 0.08);
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   MENSAGEM
+===================================================== */
+
+.proposal-field-full {
+    margin-top: 16px;
+}
+
+
+.proposal-field textarea {
+    min-height: 90px;
+    max-height: 110px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   CHECKBOX / LGPD
+===================================================== */
+
+.proposal-consent {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+}
+
+
+.proposal-consent input {
+    width: 16px;
+    height: 16px;
+
+    margin: 1px 0 0;
+
+    flex-shrink: 0;
+
+    accent-color: #169d3d;
+}
+
+
+.proposal-consent > span {
+    color: #5c5c5c;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+.proposal-consent small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #929292;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+.proposal-submit {
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: 17px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #14973a,
+            #1bad48
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.25px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        filter 0.22s ease;
+}
+
+
+.proposal-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(22, 157, 61, 0.22);
+
+    filter: brightness(1.03);
+}
+
+
+.proposal-submit:active {
+    transform: translateY(0);
+}
+
+
+.proposal-submit:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+.proposal-loader {
+    display: none;
+
+    width: 18px;
+    height: 18px;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.38);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        proposalSpin 0.7s linear infinite;
+}
+
+
+.proposal-submit.loading span {
+    display: none;
+}
+
+
+.proposal-submit.loading .proposal-loader {
+    display: block;
+}
+
+
+@keyframes proposalSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   MENSAGEM DE SUCESSO / ERRO
+===================================================== */
+
+.proposal-message {
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 10px 12px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+.proposal-message.success {
+    display: block;
+
+    color: #0b7630;
+
+    background: #e7f6eb;
+
+    border: 1px solid #c9e9d0;
+}
+
+
+.proposal-message.error {
+    display: block;
+
+    color: #9b2b2b;
+
+    background: #fbeaea;
+
+    border: 1px solid #f0cccc;
+}
+
+
+/* =====================================================
+   SELO / TRUST
+===================================================== */
+
+.proposal-trust {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 16px 8px 0;
+}
+
+
+.proposal-trust-icon {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #19a641;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+.proposal-trust-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+.proposal-trust strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+.proposal-trust p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .proposal-section {
+        padding:
+            65px 35px;
+    }
+
+
+    .proposal-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .proposal-content {
+        max-width: 720px;
+    }
+
+
+    .proposal-form-wrapper {
+        max-width: 720px;
+    }
+
+
+    .proposal-form {
+        padding:
+            32px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .proposal-section {
+        padding:
+            55px 20px;
+    }
+
+
+    .proposal-container {
+        gap: 35px;
+    }
+
+
+    .proposal-content {
+        max-width: 100%;
+    }
+
+
+    .proposal-eyebrow {
+        margin-bottom: 12px;
+
+        font-size: 10px;
+    }
+
+
+    .proposal-title {
+        font-size:
+            clamp(38px, 12vw, 48px);
+
+        letter-spacing: -1.7px;
+    }
+
+
+    .proposal-title span {
+        margin-top: 5px;
+    }
+
+
+    .proposal-description {
+        margin-top: 18px;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    .proposal-line {
+        margin-top: 18px;
+        margin-bottom: 12px;
+    }
+
+
+    /* benefícios */
+
+    .proposal-benefit {
+        grid-template-columns:
+            50px 1fr;
+
+        gap: 14px;
+
+        padding: 12px 0;
+    }
+
+
+    .proposal-benefit-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .proposal-benefit-icon svg {
+        width: 21px;
+        height: 21px;
+    }
+
+
+    .proposal-benefit h3 {
+        font-size: 14px;
+    }
+
+
+    .proposal-benefit p {
+        font-size: 11px;
+    }
+
+
+    /* form */
+
+    .proposal-form {
+        padding:
+            25px 20px;
+
+        border-radius: 12px;
+    }
+
+
+    .proposal-form-header {
+        margin-bottom: 20px;
+    }
+
+
+    .proposal-form-header h3 {
+        font-size: 21px;
+    }
+
+
+    .proposal-form-grid {
+        grid-template-columns: 1fr;
+
+        row-gap: 14px;
+    }
+
+
+    .proposal-field input,
+    .proposal-field select {
+        height: 44px;
+    }
+
+
+    .proposal-field textarea {
+        min-height: 90px;
+        max-height: 130px;
+    }
+
+
+    .proposal-field-full {
+        margin-top: 14px;
+    }
+
+
+    .proposal-submit {
+        min-height: 47px;
+    }
+
+
+    /* trust */
+
+    .proposal-trust {
+        align-items: flex-start;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE PEQUENO
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .proposal-section {
+        padding:
+            50px 16px;
+    }
+
+
+    .proposal-title {
+        font-size: 39px;
+    }
+
+
+    .proposal-form {
+        padding:
+            23px 17px;
+    }
+
+
+    .proposal-form-header h3 {
+        font-size: 20px;
+    }
+
+
+    .proposal-benefit {
+        grid-template-columns:
+            46px 1fr;
+    }
+
+
+    .proposal-benefit-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+}
+
+/* =====================================================
+   HONEYPOT ANTI-SPAM
+===================================================== */
+
+.form-honeypot {
+    position: absolute;
+
+    left: -9999px;
+    top: -9999px;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
 }
