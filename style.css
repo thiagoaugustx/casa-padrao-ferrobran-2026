@@ -4453,6 +4453,7 @@ letter-spacing: 0.8px;
   .fb-footer__social-link {
     width: 40px;
     height: 40px;
+    
   }
 
   .fb-footer__social-link svg {
@@ -4462,10 +4463,12 @@ letter-spacing: 0.8px;
 
   .fb-footer__nav a {
     font-size: 13px;
+    
   }
 
   .fb-footer__nav ul {
     gap: 22px;
+    
   }
 
   .fb-footer__cta h2 {
@@ -4513,6 +4516,7 @@ letter-spacing: 0.8px;
   .fb-footer__nav {
     padding-left: 40px;
     padding-right: 0;
+    display: none;
   }
 
 
@@ -4521,7 +4525,6 @@ letter-spacing: 0.8px;
   .fb-footer__contact {
     padding-left: 0;
     padding-right: 40px;
-
     border-left: 0;
   }
 
@@ -4534,7 +4537,9 @@ letter-spacing: 0.8px;
 
 
   .fb-footer__logo img {
-    width: 230px;
+    width: 210px !important;
+    margin: 0 auto !important;
+    display: flex !important;
   }
 
   .fb-footer__description {
@@ -4543,7 +4548,9 @@ letter-spacing: 0.8px;
 
   .fb-footer__social-link {
     width: 46px;
-    height: 46px;
+    height: 46px;;
+    display: flex !important;
+    
   }
 
   .fb-footer__bottom-line {
